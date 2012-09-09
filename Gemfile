@@ -4,6 +4,7 @@ gem 'rails', '3.2.7'
 gem 'mail'
 gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
+gem 'thin'
 
 group :test, :development do
   gem 'sqlite3'
@@ -13,8 +14,10 @@ group :test, :development do
   gem 'capybara'
   gem 'fabrication'
   gem 'guard-rspec'
+  gem 'rb-fsevent', '~> 0.9.1'
   gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'quiet_assets'
 end
 
 group :production do

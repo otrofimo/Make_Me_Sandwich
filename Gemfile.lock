@@ -48,8 +48,10 @@ GEM
       execjs
     coffee-script-source (1.3.3)
     commonjs (0.2.6)
+    daemons (1.1.8)
     diff-lcs (1.1.3)
     erubis (2.7.0)
+    eventmachine (0.12.10)
     execjs (1.4.0)
       multi_json (~> 1.0)
     fabrication (2.2.3)
@@ -91,6 +93,8 @@ GEM
     nokogiri (1.5.5)
     pg (0.14.1)
     polyglot (0.3.3)
+    quiet_assets (1.0.1)
+      railties (~> 3.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -114,6 +118,7 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (0.9.2.2)
+    rb-fsevent (0.9.1)
     rdoc (3.12)
       json (~> 1.4)
     rspec (2.11.0)
@@ -153,6 +158,10 @@ GEM
     sqlite3 (1.3.6)
     therubyracer (0.10.2)
       libv8 (~> 3.3.10)
+    thin (1.4.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.16.0)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -184,11 +193,14 @@ DEPENDENCIES
   launchy
   mail
   pg
+  quiet_assets
   rails (= 3.2.7)
+  rb-fsevent (~> 0.9.1)
   rspec-rails
   sass-rails (~> 3.2.3)
   shoulda-matchers
   simplecov
   sqlite3
+  thin
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)

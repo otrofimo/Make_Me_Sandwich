@@ -4,7 +4,7 @@ class SandwichizerController < ApplicationController
   end
 
   def new
-  		@choices = Options.all	
+  		
   end
 
   def create

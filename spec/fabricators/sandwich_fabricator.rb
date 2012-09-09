@@ -1,0 +1,2 @@
+Fabricator(:sandwich) do
+end
