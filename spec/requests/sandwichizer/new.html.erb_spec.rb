@@ -4,9 +4,11 @@ describe "Ordering page" do
   
   it "should be able to choose 1 of 3 sandwiches" do
   	visit new_sandwichizer_path
-    check("Meaty")
-    check("Vegetarian")
-    check("Vegan :(")
+    page.has_selector?("email")
+    choose("Meaty")
+    choose("Vegetarian")
+    choose("Vegan :(")
+    click_button "Sandwich Me!"
   end
 
 end

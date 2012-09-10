@@ -1,2 +1,42 @@
-<h1>Sandwichizer#new</h1>
-<p>Find me in app/views/sandwichizer/new.html.erb</p>
+<%=form_for :sandwich, :url => {:action => 'create'}, :html => {:class=>"span4 offset1"} do |f|%>
+
+		<br />
+
+		<%=text_field_tag "Email", "Enter your email here..."%>
+
+		<br />
+
+		<ul class="nav nav-list">
+			
+			<li class="divider"></li>
+
+			<li>
+			<%=f.label :filling_type, "Meaty", :value => 'Meaty'%>
+			<%=f.radio_button :filling_type, "Meaty", {:checked => true}  %>
+			<%=image_tag "meaty_sandwich.jpg", :class=>:thumbnail, :width => 120, :height => 120%>
+			</li>
+	
+			<li class="divider"></li>
+
+			<li>
+				<%=f.label :filling_type, "Vegetarian", :value => 'Vegetarian'%>
+				<%=f.radio_button :filling_type, "Vegetarian" %>
+				<%=image_tag "vegetarian_sandwich.jpg", :class=>:thumbnail, :width => 120, :height => 120%>
+			</li>
+
+			<li class="divider"></li>
+		
+			<li>		
+				<%=f.label :filling_type, "Vegan :(", :value => 'Vegan :('%>
+				<%=f.radio_button :filling_type, "Vegan :(" %>
+				<%=image_tag "vegan_sandwich.jpg", :class=>:thumbnail, :width => 120, :height => 120%>
+			</li>
+
+			<li class="divider"></li>
+		</ul>
+
+		<br />
+		
+		<%= f.submit :class=>:btn, :value => "Sandwich Me!"%>
+
+	<%end%>

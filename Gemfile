@@ -5,6 +5,7 @@ gem 'mail'
 gem 'twitter-bootstrap-rails'
 gem 'jquery-rails'
 gem 'thin'
+gem 'mail'
 
 group :test, :development do
   gem 'sqlite3'
