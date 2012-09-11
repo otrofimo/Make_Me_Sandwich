@@ -47,7 +47,7 @@ class Email < ActionMailer::Base
 
 		Mail.deliver do
 			from     "#{address}"
-			to       "otrofimo@gmail.com"  #"make_sandwich@generalthings.com"
+			to       "make_sandwich@generalthings.com"
 			subject  "Its Sandwich Time!"
 			body     "Hey can you make a fresh #{filling_type} sandwich for #{name}"
 			add_file "app/assets/images/make_me_a_sandwich.jpg"
