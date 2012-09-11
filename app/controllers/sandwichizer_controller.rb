@@ -13,7 +13,7 @@ class SandwichizerController < ApplicationController
   	@root_url = root_url
   	# @params = params
   	
-  	if Email.valid_email?(params[:Email]) && Email.send(params[:Email], params[:sandwich][:filling_type])
+  	if Email.valid_email?(params[:Email]) && Email.send(params[:Email], params[:sandwich][:filling_type],params[:Name])
 	  	flash[:notice] = "Successfully created..."	
 	  else
 	  	flash[:notice] = "Please input valid email address"

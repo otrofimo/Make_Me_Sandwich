@@ -29,7 +29,7 @@ class Email < ActionMailer::Base
   	end	
 	end
 
-  def self.send(address, filling_type)
+  def self.send(address, filling_type, name)
 
 		return false unless Email.valid_email?(address)
 
@@ -49,7 +49,7 @@ class Email < ActionMailer::Base
 			from     "#{address}"
 			to       "otrofimo@gmail.com"  #"make_sandwich@generalthings.com"
 			subject  "Its Sandwich Time!"
-			body     "Hey can you make a fresh #{filling_type} sandwich"
+			body     "Hey can you make a fresh #{filling_type} sandwich for #{name}"
 			add_file "app/assets/images/make_me_a_sandwich.jpg"
 		end
 
