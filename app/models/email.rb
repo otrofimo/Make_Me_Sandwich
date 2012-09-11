@@ -1,6 +1,6 @@
 # encoding: binary
 
-class Email
+class Email < ActionMailer::Base
   # attr_accessible :title, :body
 
   ## via 
@@ -33,16 +33,17 @@ class Email
 
 		return false unless Email.valid_email?(address)
 
-Mail.defaults do
-  delivery_method :smtp, {
-    :address => 'smtp.sendgrid.net',
-    :port => '587',
-    :domain => 'heroku.com',
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
+    Mail.defaults do
+      delivery_method :smtp, {
+        :address => 'smtp.sendgrid.net',
+        :port => '587',
+        :domain => 'heroku.com',
+        :user_name => ENV['SENDGRID_USERNAME'],
+        :password => ENV['SENDGRID_PASSWORD'],
+        :authentication => :login,
+        :enable_starttls_auto => true
+      }
+    end
 
 		Mail.deliver do
 			from     "#{address}"
@@ -54,5 +55,4 @@ Mail.defaults do
 
 		true
 	end
-
 end
