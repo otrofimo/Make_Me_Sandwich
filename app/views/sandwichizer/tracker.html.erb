@@ -1,0 +1,30 @@
+<%= render :partial => "flash", :locals => {:flash => flash} %>
+
+<div class="span8 status-bar">
+
+	<div class="span2 status-bar-order">
+	</div>
+	
+	<div class="span2 offset2 status-bar-started">
+	</div>
+	
+	<div class="span2 offset4 status-bar-ready">
+	</div>
+
+	<div class="span2 offset6 status-bar-someone-else-eating">
+	</div>
+
+</div>
+
+<div class="span6 event-description">
+	<p>Your order is being processed</p>
+</div>
+
+
+<script>
+	$.each(["order", "started", "ready", "someone-else-eating"], trackSandwhich(i,value))
+
+	var trackSandwhich = function(index, value){
+
+	}
+</script>

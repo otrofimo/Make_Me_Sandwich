@@ -10,15 +10,18 @@ class SandwichizerController < ApplicationController
 
   def create
 
-  	@sandwich = Sandwich.create(:filling_type => params[:sandwich][:filling_type])
+  	@sandwich = Sandwich.new(:filling_type => params[:sandwich][:filling_type])
   	@root_url = root_url
   	# @params = params
   	
-
-  	Email.send(params[:Email], params[:sandwich][:filling_type])
-
-  	#redirect_to "sandwichizer#index"
-  	
+  	if Email.valid_email?(params[:Email]) && Email.send(params[:Email], params[:sandwich][:filling_type])
+	  	Email.send(params[:Email], params[:sandwich][:filling_type])
+	  	flash[:notice] = "Successfully created..."	
+	  	#redirect_to sandwichizer tracker "sandwichizer#index"
+	  else
+	  	flash[:notice] = "Please input valid email address"
+	  	render "new"
+	  end
   end
 
 end
