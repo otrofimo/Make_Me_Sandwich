@@ -3,6 +3,7 @@ MakeSandwich::Application.routes.draw do
  root :to => 'sandwichizer#index'
 
  resources :sandwichizer, :only => [:index, :new, :create]
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
