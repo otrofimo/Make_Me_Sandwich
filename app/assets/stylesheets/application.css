@@ -11,3 +11,39 @@
  *= require_self
  *= require_tree .
  */
+
+ .status-bar-someone-else-eating{
+
+ 	height:50px;
+ 	width:100px;
+ 	background-color: grey
+ }
+
+ .status-bar-ready{
+
+ 	height:50px;
+ 	width:100px;
+ 	background-color: grey
+ }
+
+ .status-bar-started{
+ 	
+ 	height:50px;
+ 	width:100px;
+ 	background-color: grey
+ }
+
+ .status-bar-order{
+
+ 	height:50px;
+ 	width:100px;
+ 	background-color: grey
+ }
+
+ .newClass {
+
+  height:50px;
+ 	width:100px;
+ 	background-color: red
+
+ }

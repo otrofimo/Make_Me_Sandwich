@@ -1,0 +1,33 @@
+<%= render :partial => "flash", :locals => {:flash => flash} %>
+
+<div class="span12 status-bar">
+
+	<div class="span2 status-bar-order">
+	</div>
+	
+	<div class="span2 status-bar-started">
+	</div>
+	
+	<div class="span2 status-bar-ready">
+	</div>
+
+	<div class="span2 status-bar-someone-else-eating">
+	</div>
+
+</div>
+
+</br>
+
+<div class="span6 event-description">
+	<p>Your order is being processed</p>
+</div>
+
+
+<script>
+
+	var changeColor = function(value){$('.status-bar-' + value).toggleClass('newClass',5000)}
+
+	$.each(["order", "started", "ready", "someone-else-eating"],function(index,value){changeColor(value)}
+	)
+
+</script>
